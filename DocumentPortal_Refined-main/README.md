@@ -1,69 +1,195 @@
-# Project Setup Guide
+# 🚀 Project Setup Guide
 
-## Create Project Folder and Environment Setup
+This guide provides step-by-step instructions for setting up the project environment, installing dependencies, and configuring the required AI services.
+
+## Prerequisites
+
+Before getting started, ensure the following tools are installed on your system:
+
+* Python 3.10+
+* Conda (Anaconda or Miniconda)
+* Git
+* Visual Studio Code
+* Internet connection for dependency installation
+
+---
+
+## 1. Create the Project Workspace
 
 ```bash
-# Create a new project folder
+# Create a new project directory
 mkdir <project_folder_name>
 
-# Move into the project folder
+# Navigate to the project directory
 cd <project_folder_name>
 
-# Open the folder in VS Code
+# Open the project in Visual Studio Code
 code .
+```
 
-# Create a new Conda environment with Python 3.10
+---
+
+## 2. Create and Activate a Virtual Environment
+
+```bash
+# Create a Conda environment with Python 3.10
 conda create -p <env_name> python=3.10 -y
 
-# Activate the environment (use full path to the environment)
-conda activate <path_of_the_env>
+# Activate the environment
+conda activate <path_to_env>
+```
 
-# Install dependencies from requirements.txt
+Verify the Python installation:
+
+```bash
+python --version
+```
+
+---
+
+## 3. Install Project Dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-# Initialize Git
+Verify installed packages:
+
+```bash
+pip list
+```
+
+---
+
+## 4. Git Version Control Setup
+
+Initialize Git and commit your changes:
+
+```bash
+# Initialize Git repository
 git init
 
-# Stage all files
+# Stage all project files
 git add .
 
-# Commit changes
-git commit -m "<write your commit message>"
-
-# Push to remote (after adding remote origin)
-git push
-
-# Cloning the repository
-git clone https://github.com/Sayancode2026/DocAI
+# Create initial commit
+git commit -m "Initial project setup"
 ```
-## Minimum Requirements for the Project
 
-### LLM Models
-- **Groq** (Free)
-- **OpenAI** (Paid)
-- **Gemini** (15 Days Free Access)
-- **Claude** (Paid)
-- **Hugging Face** (Free)
-- **Ollama** (Local Setup)
+---
 
-### Embedding Models
-- **OpenAI**
-- **Hugging Face**
-- **Gemini**
+## 5. Connect and Push to GitHub
 
-### Vector Databases
-- **In-Memory**
-- **On-Disk**
-- **Cloud-Based**
+```bash
+# Add remote repository
+git remote add origin <repository_url>
 
-## API Keys
+# Rename branch to main
+git branch -M main
 
-### GROQ API Key
-- [Get your API Key](https://console.groq.com/keys)  
-- [Groq Documentation](https://console.groq.com/docs/overview)
+# Push project to GitHub
+git push -u origin main
+```
 
-### Gemini API Key
-- [Get your API Key](https://aistudio.google.com/apikey)  
-- [Gemini Documentation](https://ai.google.dev/gemini-api/docs/models)
+---
 
+## 6. Clone the Repository
 
+```bash
+git clone <repository_url>
+```
+
+Example:
+
+```bash
+git clone https://github.com/Sayancode2026/DocAI.git
+```
+
+---
+
+# AI Model Support
+
+The project supports integration with multiple Large Language Models (LLMs), Embedding Models, and Vector Databases.
+
+## Supported LLM Providers
+
+| Provider     | Access Type          |
+| ------------ | -------------------- |
+| Groq         | Free                 |
+| OpenAI       | Paid                 |
+| Gemini       | Free Trial Available |
+| Claude       | Paid                 |
+| Hugging Face | Free                 |
+| Ollama       | Local Deployment     |
+
+---
+
+## Supported Embedding Models
+
+* OpenAI Embeddings
+* Hugging Face Embeddings
+* Gemini Embeddings
+
+---
+
+## Supported Vector Databases
+
+* In-Memory Vector Stores
+* On-Disk Vector Databases
+* Cloud-Based Vector Databases
+
+---
+
+# API Configuration
+
+To use external AI services, obtain the required API keys and configure them in your environment variables.
+
+## Groq API
+
+* Generate API Key from the Groq Console
+* Refer to the official documentation for setup and usage instructions
+
+## Gemini API
+
+* Generate API Key from Google AI Studio
+* Refer to the official Gemini API documentation for implementation details
+
+---
+
+# Environment Variables
+
+Create a `.env` file in the project root directory:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+GEMINI_API_KEY=your_gemini_api_key
+OPENAI_API_KEY=your_openai_api_key
+```
+
+---
+
+# Running the Application
+
+```bash
+python app.py
+```
+
+or
+
+```bash
+streamlit run app.py
+```
+
+(depending on the project architecture)
+
+---
+
+# Contributing
+
+Contributions, feature requests, and bug reports are welcome. Please create an issue or submit a pull request to contribute to the project.
+
+---
+
+# License
+
+This project is licensed under the MIT License.
