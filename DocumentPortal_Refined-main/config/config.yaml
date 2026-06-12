@@ -1,0 +1,28 @@
+faiss_db:
+  collection_name: "document_portal"
+
+embedding_model:
+  provider: "huggingface"
+  model_name: "all-MiniLM-L6-v2"         # ← correct, no "models/" prefix
+
+retriever:
+  top_k: 10
+
+llm:
+  groq:
+    provider: "groq"
+    model_name: "llama-3.3-70b-versatile"    # ← replace deepseek
+    temperature: 0
+    max_output_tokens: 2048
+
+  google:
+    provider: "google"
+    model_name: "gemini-1.5-flash"
+    temperature: 0
+    max_output_tokens: 2048
+
+  openai:
+    provider: "openai"
+    model_name: "gpt-4o-mini"
+    temperature: 1
+    max_output_tokens: 2048
